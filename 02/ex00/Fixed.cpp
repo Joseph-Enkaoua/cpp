@@ -13,7 +13,7 @@ Fixed::Fixed(const Fixed & other){
 Fixed & Fixed::operator=(const Fixed & rhs){
     std::cout << "Copy assignment operator called" << std::endl;
     this->_fixed_point_num = rhs._fixed_point_num;
-    return *this;
+    return (*this);
 }
 
 int	Fixed::getRawBits( void ) const{
