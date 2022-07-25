@@ -22,12 +22,7 @@ public:
 	void	attack(const std::string &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-    void	set_hit_points(int amount);
-    void	set_energy_points(int amount);
-    void	set_attack_damage(int amount);
-    int		get_hit_points( void );
-    int		get_energy_points( void );
-    int		get_attack_damage( void );
+
 };
 
 #endif

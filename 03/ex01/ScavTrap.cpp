@@ -5,10 +5,10 @@ ScavTrap::ScavTrap(){
 }
 
 ScavTrap::ScavTrap(std::string str){
-	*this->claptrap = ClapTrap(str);
-	claptrap->set_hit_points(100);
-	claptrap->set_energy_points(50);
-	claptrap->set_attack_damage(20);
+	_name = str;
+	_hit_points = 100;
+	_energy_points = 50;
+	_attack_damage = 20;
 	std::cout << "Default Scav constructor (str) called" << std::endl;
 }
 
@@ -38,3 +38,6 @@ void	ScavTrap::attack(const std::string &target){
 	}
 }
 
+void	ScavTrap::guardGate( void ){
+	std::cout << "ScavTrap " << _name << " is now in gate keeper mode" << std::endl;
+}

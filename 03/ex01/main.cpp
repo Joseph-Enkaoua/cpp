@@ -1,9 +1,10 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
 
-    ClapTrap    vivi("Vivi");
-    ClapTrap    roro("Roro");
+    ScavTrap    vivi("Vivi");
+    ScavTrap    roro("Roro");
 
     vivi.beRepaired(2);
     vivi.attack("Roro");
