@@ -1,5 +1,5 @@
-NAME		= Serena
-SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME		= Repetitive
+SRCS		= main.cpp ClapTrap.cpp FragTrap.cpp
 OBJS		= ${SRCS:.cpp=.o}
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
