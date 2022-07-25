@@ -5,9 +5,7 @@
 # include <string>
 #include "ClapTrap.hpp"
 
-class ScavTrap {
-private:
-
+class ScavTrap : public ClapTrap {
 public:
 	ScavTrap();
 	ScavTrap(std::string str);
@@ -16,7 +14,7 @@ public:
 
 	ScavTrap & operator=(const ScavTrap & rhs);
 	
-    ClapTrap    claptrap;
+    ClapTrap    *claptrap;
 
 	void	attack(const std::string &target);
 	void	takeDamage(unsigned int amount);
