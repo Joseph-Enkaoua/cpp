@@ -16,6 +16,4 @@ public:
 	void	highFivesGuys( void );
 };
 
-
-
 #endif

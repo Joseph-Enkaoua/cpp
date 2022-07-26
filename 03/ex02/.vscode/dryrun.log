@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/henkaoua/Desktop/cpp/03/ex02'
+make: Nothing to be done for `all'.
+ 
+make: Leaving directory `/Users/henkaoua/Desktop/cpp/03/ex02'
+ 
