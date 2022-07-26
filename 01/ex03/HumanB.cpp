@@ -2,7 +2,7 @@
 
 HumanB::HumanB(){}
 
-HumanB::HumanB(std::string str) : name(str) {}
+HumanB::HumanB(std::string str) : name(str), human_weapon(NULL) {}
 
 HumanB::~HumanB(){}
 
@@ -11,5 +11,6 @@ void    HumanB::setWeapon(Weapon *weapon){
 }
 
 void    HumanB::attack(){
-	std::cout << name << " attacks with their " << human_weapon->getType() << std::endl; 
+	if (human_weapon)
+		std::cout << name << " attacks with their " << human_weapon->getType() << std::endl; 
 }
