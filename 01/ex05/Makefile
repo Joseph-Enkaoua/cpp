@@ -1,4 +1,4 @@
-NAME		= sedforlosers
+NAME		= harl
 SRCS		= main.cpp Harl.cpp
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 OBJS		= ${SRCS:.cpp=.o}

@@ -1,5 +1,5 @@
-NAME		= Polymorphism Animal.cpp Dog.cpp Cat.cpp
-SRC			= main.cpp
+NAME		= Polymorphism
+SRC			= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp
 OBJ			= ${SRC:.cpp=.o}
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
@@ -10,7 +10,7 @@ $(NAME): $(OBJ)
 	c++ $(OBJ) $(CXXFLAGS) -o $(NAME)
 
 clean:
-	$(RM) (OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
