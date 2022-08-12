@@ -1,9 +1,9 @@
 #ifndef WRONGDOG_HPP
 # define WRONGDOG_HPP
 
-# include "WrongAnimal.hpp"
+# include "WrongAAnimal.hpp"
 
-class WrongDog : public WrongAnimal {
+class WrongDog : public WrongAAnimal {
 public:
 	WrongDog();
 	WrongDog(const WrongDog &other);

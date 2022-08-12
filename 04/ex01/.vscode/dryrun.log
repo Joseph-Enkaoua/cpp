@@ -1,0 +1,13 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/anais/Desktop/cpp/04/ex01'
+c++ -Wall -Wextra -Werror -std=c++98   -c -o main.o main.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o Animal.o Animal.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o Dog.o Dog.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o Cat.o Cat.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o WrongAnimal.o WrongAnimal.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o WrongDog.o WrongDog.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o WrongCat.o WrongCat.cpp
+c++ -Wall -Wextra -Werror -std=c++98   -c -o Brain.o Brain.cpp
+c++ main.o Animal.o Dog.o Cat.o WrongAnimal.o WrongDog.o WrongCat.o Brain.o -Wall -Wextra -Werror -std=c++98 -o worldOnFire
+make: Leaving directory `/Users/anais/Desktop/cpp/04/ex01'
+ 

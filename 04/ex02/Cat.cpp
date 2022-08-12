@@ -6,14 +6,14 @@ Cat::Cat() {
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &other) : Animal(other) {
+Cat::Cat(const Cat &other) : AAnimal(other) {
 	std::cout << "Cpoy Cat constructor called" << std::endl;
 	*this = other;
 }
 
 Cat::~Cat(){
-	std::cout << "Cat destructor called" << std::endl;
 	delete this->_brain;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat & Cat::operator=(const Cat &rhs){

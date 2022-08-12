@@ -14,7 +14,7 @@ public:
 
 	Dog & operator=(const Dog &rhs);
 
-	virtual void	makeSound() const;
+	void	makeSound() const;
 	void			setIdea(std::string idea, int idea_num);
 	std::string		getIdea(int idea_num);
 	void			deleteIdea(int idea_num);

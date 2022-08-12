@@ -6,14 +6,14 @@ Dog::Dog() {
 	this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog &other) : AAnimal(other) {
 	std::cout << "Cpoy Dog constructor called" << std::endl;
 	*this = other;
 }
 
 Dog::~Dog(){
-	std::cout << "Dog destructor called" << std::endl;
 	delete this->_brain;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog & Dog::operator=(const Dog &rhs){

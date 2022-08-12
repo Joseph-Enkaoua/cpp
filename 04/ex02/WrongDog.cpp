@@ -5,7 +5,7 @@ WrongDog::WrongDog() {
 	std::cout << "Default WrongDog constructor called" << std::endl;
 }
 
-WrongDog::WrongDog(const WrongDog &other) : WrongAnimal(other) {
+WrongDog::WrongDog(const WrongDog &other) : WrongAAnimal(other) {
 	*this = other;
 	std::cout << "Cpoy WrongDog constructor called" << std::endl;
 }

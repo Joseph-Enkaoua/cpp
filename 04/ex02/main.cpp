@@ -6,21 +6,21 @@
 int main() {
 	int		i = -1;
 	int		num = 10;
-	const Animal	*animal[num];
+	const AAnimal	*AAnimal[num];
 
-	//creating animals
-	std::cout << "\n-------Creating array of " << num << " animals-------\n" << std::endl;
+	//creating AAnimals
+	std::cout << "\n-------Creating array of " << num << " AAnimals-------\n" << std::endl;
 	while (++i < (num / 2))
-		animal[i] = new Dog();
+		AAnimal[i] = new Dog();
 	i--;
 	while (++i < num)
-		animal[i] = new Cat();
+		AAnimal[i] = new Cat();
 
-	//testing animals sound
-	std::cout << "\n-------Testing animals sound-------\n" << std::endl;
-	animal[0]->makeSound();
-	animal[num / 2]->makeSound();
-	animal[num - 1]->makeSound();
+	//testing AAnimals sound
+	std::cout << "\n-------Testing AAnimals sound-------\n" << std::endl;
+	AAnimal[0]->makeSound();
+	AAnimal[num / 2]->makeSound();
+	AAnimal[num - 1]->makeSound();
 
 	//testing copy
 	std::cout << "\n-------Testing deep copy. creating a dog with brain and a copy to the dog-------\n" << std::endl;
@@ -35,10 +35,10 @@ int main() {
 	std::cout << "idea 99 : " << copy_dog->getIdea(99) << std::endl;
 	delete copy_dog;
 
-	std::cout << "\n-------Deleting animal array-------\n" << std::endl;
+	std::cout << "\n-------Deleting AAnimal array-------\n" << std::endl;
 	i = -1;
 	while (++i < num)
-		delete animal[i];
+		delete AAnimal[i];
 	
 	std::cout << "\n-------------------- leaks check --------------------\n" << std::endl;
 
