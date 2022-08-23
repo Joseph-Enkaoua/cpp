@@ -4,6 +4,7 @@ OBJ			= ${SRC:.cpp=.o}
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 DEBUG		= -fsanitize=address
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
