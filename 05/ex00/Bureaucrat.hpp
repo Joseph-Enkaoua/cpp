@@ -20,14 +20,14 @@ public:
 
 	class GradeTooHighException : public std::exception {
     public:
-		const char * what() const noexcept override {
+		virtual const char* what() const throw() {
 			return (" Error: grade too high");
 		}
 	};
 
 	class GradeTooLowException : public std::exception {
     public:
-		const char * what() const noexcept override {
+		virtual const char* what() const throw() {
 			return (" Error: grade too low");
 		}
 	};
