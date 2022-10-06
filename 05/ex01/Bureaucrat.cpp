@@ -1,5 +1,19 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : _name("Borat") {
+	_grade = 150;
+	std::cout << "Default Bureaucrat Borat has created successfully" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	_grade = grade;
+	std::cout << "Bureaucrat " << name << " has created successfully" << std::endl;
+}
+
 int	Bureaucrat::setGrade(int grade){
 	try
 	{
@@ -15,18 +29,6 @@ int	Bureaucrat::setGrade(int grade){
 		return 0;
 	}
 	return 1;
-}
-
-Bureaucrat::Bureaucrat() : _name("Borat") {
-	_grade = 150;
-}
-
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
-	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	_grade = grade;
 }
 
 Bureaucrat::~Bureaucrat() {}
