@@ -19,7 +19,12 @@ public:
 	bool		getIsSigned() const;
 	int			getToSign() const;
 	int			getToExecute() const;
+<<<<<<< HEAD
 	void		beSigned(Bureaucrat *bob);
+=======
+	void		beSigned(Bureaucrat bob);
+	void		signForm(Bureaucrat george);
+>>>>>>> 1ccbeca1fd56a748961481406b6aab0a00b52b8a
 
 	class GradeTooHighException : public std::exception {
 	public:
