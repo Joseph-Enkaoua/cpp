@@ -23,7 +23,7 @@ Converter & Converter::operator=(const Converter & rhs){
 }
 
 void	Converter::findType(std::string str) {
-	if (str.length() == 1 && isprint(str[0]))
+	if (str.length() == 1 && isprint(str[0]) && !(str[0] > 47 && str[0] < 58))
 		this->charType(str[0]);
 	else if (isInt(str))
 		this->printValue();
@@ -32,9 +32,9 @@ void	Converter::findType(std::string str) {
 	// else if (isDouble(str))
 	// 	this->printValue();
 	else
-		throw Converter::invalidValueException();
+        this->lastOne(str);
 }
-//to check:: how to convert char to int float double 
+
 void	Converter::charType(char c) {
 	_char = c;
 	_int = static_cast<int>(c);
@@ -51,19 +51,40 @@ bool	Converter::isInt(std::string str) {
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i]) {
-		if (str[i] < '0' || str[i] > '9')
+		if (str[i] < 48 || str[i] > 57)
 		return false;
 		i++;
 	}
 	if (std::stoi(str) > INT_MAX || std::stoi(str) < INT_MIN)
 		throw Converter::invalidValueException();
 	_int = std::stoi(str);
+    _char = static_cast<char>(_int);
+	_float = static_cast<double>(_int);
+	_double = static_cast<double>(_int);
 	return true;
 }
 
 void	Converter::printValue() {
-	std::cout << "char: " << _char << std::endl;
+    if (isprint(_int))
+	    std::cout << "char: '" << _char << "'" << std::endl;
+    else
+	    std::cout << "char: Non displayable" << std::endl;
 	std::cout << "int: " << std::setprecision(1) << std::fixed << _int << std::endl;
 	std::cout << "float: " << std::setprecision(1) << std::fixed << _float << "f" << std::endl;
 	std::cout << "double: " << _double << std::endl;
+}
+
+void    Converter::lastOne(std::string str) {
+    if (str[0] == '+')
+        str = str.substr(1);
+    if (!(str.compare("-inff")) || !(str.compare("inff")) || !(str.compare("nanf"))) {
+        std::cout << "char: impossible\nint: impossible\nfloat: " << str << "\ndouble: "
+        << str.substr(0, str.length() - 1) << std::endl;
+    }
+    else if (!(str.compare("-inf")) || !(str.compare("inf")) || !(str.compare("nan"))) {
+        std::cout << "char: impossible\nint: impossible\nfloat: " << str << "f\ndouble: "
+        << str << std::endl;
+    }
+    else
+    	throw Converter::invalidValueException();
 }

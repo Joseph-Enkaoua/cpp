@@ -20,6 +20,7 @@ private:
 	bool	isFloat(std:: string str);
 	bool	isDouble(std::string str);
 	void	printValue();
+	void	lastOne(std::string str);
 public:
 	Converter();
 	Converter(std::string str);
