@@ -27,8 +27,8 @@ void	Converter::findType(std::string str) {
 		this->charType(str[0]);
 	else if (isInt(str))
 		this->printValue();
-	// else if (isFloat(str))
-	// 	this->printValue();
+	else if (isFloat(str))
+		this->printValue();
 	// else if (isDouble(str))
 	// 	this->printValue();
 	else
@@ -61,6 +61,24 @@ bool	Converter::isInt(std::string str) {
     _char = static_cast<char>(_int);
 	_float = static_cast<double>(_int);
 	_double = static_cast<double>(_int);
+	return true;
+}
+
+bool	Converter::isFloat(std::string str) {
+	int	dot = 0;
+	std::string	sub = str.substr(0, (str.length() - 1));
+	if (str[str.length() - 1] != 'f')
+		return false;
+	for (int i = 0;i < (int)sub.length();i++) {
+		if (sub[i] == '.')
+			dot++;
+		if ((!isnumber(sub[i]) && sub[i] != '.') || dot > 1)
+		throw Converter::invalidValueException();
+	}
+	_double = std::stod(sub);
+	_char = static_cast<char>(_double);
+	_int = static_cast<int>(_double);
+	_float = static_cast<float>(_double);
 	return true;
 }
 
