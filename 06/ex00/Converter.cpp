@@ -1,5 +1,5 @@
 #include "Converter.hpp"
-//check convert print!
+
 Converter::Converter() {
 	throw Converter::invalidValueException();
 }
