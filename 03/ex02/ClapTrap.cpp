@@ -2,6 +2,10 @@
 
 ClapTrap::ClapTrap(){
 	std::cout << "Default Clap constructor called" << std::endl;
+	_name = "random";
+	_hit_points = 10;
+	_energy_points = 10;
+	_attack_damage = 0;
 }
 
 ClapTrap::ClapTrap(std::string str){
@@ -18,7 +22,7 @@ ClapTrap::ClapTrap(const ClapTrap &other){
 }
 
 ClapTrap & ClapTrap::operator=(const ClapTrap & rhs){
-	std::cout << "Clap: Copy assignment operator called" << std::endl;
+	std::cout << "Clap: Copy a ssignment operator called" << std::endl;
 	this->_name = rhs._name;
 	this->_hit_points = rhs._hit_points;
 	this->_energy_points = rhs._energy_points;

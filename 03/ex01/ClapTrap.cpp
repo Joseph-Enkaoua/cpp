@@ -2,6 +2,10 @@
 
 ClapTrap::ClapTrap(){
 	std::cout << "Default Clap constructor called" << std::endl;
+    _name = "random";
+	_hit_points = 10;
+	_energy_points = 10;
+	_attack_damage = 0;
 }
 
 ClapTrap::ClapTrap(std::string str){

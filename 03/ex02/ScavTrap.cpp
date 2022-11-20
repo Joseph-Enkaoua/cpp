@@ -2,14 +2,18 @@
 
 ScavTrap::ScavTrap(){
 	std::cout << "Default Scav constructor called" << std::endl;
+    _name = "random";
+	_hit_points = 100;
+	_energy_points = 50;
+	_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(std::string str){
+	std::cout << "Default Scav constructor (str) called" << std::endl;
 	_name = str;
 	_hit_points = 100;
 	_energy_points = 50;
 	_attack_damage = 20;
-	std::cout << "Default Scav constructor (str) called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other){

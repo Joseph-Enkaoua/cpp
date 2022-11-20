@@ -9,6 +9,7 @@ int main(){
     vivi.beRepaired(2);
     vivi.attack("Roro");
     roro.takeDamage(10);
+    vivi.guardGate();
 
     return 0;
 }
