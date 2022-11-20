@@ -77,6 +77,11 @@ Fixed	Fixed::operator*(const Fixed & rhs) const{
 }
 
 Fixed	Fixed::operator/(const Fixed & rhs) const {
+    if (rhs.to_Float() == 0) {
+        std::cout << "Devision by 0 is not possible" << std::endl;
+        Fixed f(0);
+        return f;
+    }
 	return (Fixed(this->to_Float() / rhs.to_Float()));
 }
 
