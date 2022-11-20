@@ -1,5 +1,5 @@
 NAME		= type
-SRCS		= main.cpp Base.cpp
+SRCS		= main.cpp
 OBJS		= ${SRCS:.cpp=.o}
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
@@ -15,6 +15,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: flcean all
+re: fclean all
 
 .PHONY: all clean fclean re
