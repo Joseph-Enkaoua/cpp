@@ -5,7 +5,6 @@ struct Data
 	char	c;
 	int		i;
 	void	*v;
-
 };
 
 uintptr_t	serialize(Data* ptr) {
