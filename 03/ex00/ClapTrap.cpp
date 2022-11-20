@@ -2,6 +2,10 @@
 
 ClapTrap::ClapTrap(){
 	std::cout << "Default constructor called" << std::endl;
+    _name = "Random";
+	_hit_points = 10;
+	_energy_points = 10;
+	_attack_damage = 0;
 }
 
 ClapTrap::ClapTrap(std::string str){
@@ -27,7 +31,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap & rhs){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << _name << " destructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target){

@@ -2,12 +2,17 @@
 
 int main(){
 
-    ClapTrap    vivi("Vivi");
+    ClapTrap    *ran = new ClapTrap;
     ClapTrap    roro("Roro");
 
-    vivi.beRepaired(2);
-    vivi.attack("Roro");
-    roro.takeDamage(10);
+    ran->beRepaired(2);
+    ran->attack("Roro");
+    ClapTrap    temp = *ran;
+    temp.takeDamage(10);
+    roro.attack("temp");
+    std::cout << "Deleting ran\n";
+    delete ran;
+    temp.takeDamage(10);
 
     return 0;
 }
