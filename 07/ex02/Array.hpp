@@ -3,35 +3,52 @@
 
 # include <iostream>
 # include <string>
+# include <exception>
+#include <ctime>
 
-template < typename T >
-class Array {
+template < typename T > class Array {
 private:
 	T				*var;
-	unsigned int	_n;
+	unsigned int	s;
 public:
-	Array() : var(NULL), _n(0) {}
-	Array(unsigned int n) : var(NULL), _n(n) {
+	Array() : var(new T[0]), s(0) {}
+	Array(unsigned int n) : var(new T[n]), s(n) {
 		if (n > 0) {
-			var = new T[n];
-			if (var == NULL)
-				
 			bzero(var, n);
 		} else {
-			std::cerr << "Error: number must be bigger than 0" << std::endl;
+			std::cerr << "Error: size must be bigger than 0" << std::endl;
 		}
 	}
-	Array   & operator=(const Array &rhs) {
-		this->var = rhs.var;
-		this->_n = rhs._n;
+	~Array() { delete[] var; }
+	Array(const Array &other) : var(new T[other.s]), s(other.s) {
+		for (int i = 0;i < (int)s;i++){
+			this->var[i] = other.var[i];
+		}
+	}
+	Array & operator=(const Array<T> &rhs) {
+		if (*this == rhs)
+			return *this;
+		delete[] var;
+		var = Array(rhs);
 		return *this;
 	}
-	Array(const Array &other) {
-		*this = other;
+	T	& operator[](unsigned int n) {
+		if (n >= s)
+			throw std::exception();
+		return (var[n]);
 	}
-	Array	& operator[](unsigned int n) {
-		return this->var[n];
-	}
+	unsigned int	size(){ return s; }
 };
+//for testing
+template < typename T > void printArray(Array<T>& arr, unsigned int length)
+{
+	for (unsigned int i = 0; i < length; i++)
+		std::cout << arr[i] << " ";
+}
 
+template < typename T > void printTypeArray(T& arr, unsigned int length)
+{
+	for (unsigned int i = 0; i < length; i++)
+		std::cout << arr[i] << " ";
+}
 #endif
