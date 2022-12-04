@@ -1,7 +1,7 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(){
-	this->_type = "aie aie wrong animal";
+	this->_type = "wrong animal";
 	std::cout << "Defauld WrongAnimal constructor called" << std::endl;
 }
 
@@ -17,8 +17,9 @@ WrongAnimal::~WrongAnimal() {
 WrongAnimal & WrongAnimal::operator=(const WrongAnimal &rhs) {
 	if (this == &rhs)
 		return (*this);
-	this->_type = rhs._type;
-	return (*this);
+    WrongAnimal	*p = new WrongAnimal();
+	p->_type = rhs._type;
+	return (*p);
 }
 
 std::string	WrongAnimal::getType() const {

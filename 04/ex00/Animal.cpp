@@ -17,8 +17,9 @@ Animal::~Animal(){
 Animal & Animal::operator=(const Animal &rhs){
 	if (this == &rhs)
 		return (*this);
-	this->_type = rhs._type;
-	return (*this);
+    Animal  *p = new Animal();
+	p->_type = rhs._type;
+	return (*p);
 }
 
 std::string	Animal::getType() const {

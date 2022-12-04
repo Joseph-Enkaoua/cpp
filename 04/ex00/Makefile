@@ -3,6 +3,7 @@ SRC			= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCa
 OBJ			= ${SRC:.cpp=.o}
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
+DEBUG		= -fsanitize=address
 
 all: $(NAME)
 
