@@ -9,6 +9,7 @@ protected:
     std::string	_type;
 public:
 	WrongAnimal();
+	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal *other);
 	~WrongAnimal();
 	

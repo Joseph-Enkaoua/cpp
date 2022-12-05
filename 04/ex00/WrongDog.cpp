@@ -1,12 +1,10 @@
 #include "WrongDog.hpp"
 
-WrongDog::WrongDog() {
-	this->_type = "WrongDog"; 
+WrongDog::WrongDog() : WrongAnimal("WrongDog") {
 	std::cout << "Default WrongDog constructor called" << std::endl;
 }
 
-WrongDog::WrongDog(const WrongDog &other) : WrongAnimal(other) {
-	*this = other;
+WrongDog::WrongDog(const WrongDog &other) : WrongAnimal(other.getType()) {
 	std::cout << "Cpoy WrongDog constructor called" << std::endl;
 }
 

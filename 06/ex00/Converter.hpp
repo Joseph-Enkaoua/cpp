@@ -30,10 +30,10 @@ public:
 	Converter & operator=(const Converter & rhs);
 
 	class invalidValueException : public std::exception {
-		public:
-			virtual const char* what() const throw() {
-				return("Error: invalid input");
-			}
+	public:
+		virtual const char* what() const throw() {
+			return("Error: invalid input");
+		}
 	};
 };
 

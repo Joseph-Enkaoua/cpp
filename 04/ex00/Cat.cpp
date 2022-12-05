@@ -1,13 +1,15 @@
 #include "Cat.hpp"
 
-Cat::Cat() {
-    this->_type = "Cat";
+Cat::Cat() : Animal("Cat") {
 	std::cout << "Default Cat constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other) {
-	*this = other;
-	std::cout << "Cpoy Cat constructor called" << std::endl;
+Cat::Cat(const Cat &other) : Animal(other.getType()) {
+	std::cout << "Copy Cat constructor called" << std::endl;
+}
+
+Cat::Cat(const Animal &other) : Animal(other) {
+	std::cout << "Copy Cat constructor called" << std::endl;
 }
 
 Cat::~Cat(){
@@ -17,7 +19,7 @@ Cat::~Cat(){
 Cat & Cat::operator=(const Cat &rhs){
     if (this == &rhs)
         return (*this);
-	this->_type = rhs._type;
+	_type = rhs.getType();
 	return (*this);
 }
 
