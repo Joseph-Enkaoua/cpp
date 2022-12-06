@@ -9,7 +9,9 @@ public:
 	Cat(const Cat &other);
 	Cat(const Animal &other);
 	~Cat();
+
 	Cat & operator=(const Cat &rhs);
+	
 	void	makeSound() const;
 };
 

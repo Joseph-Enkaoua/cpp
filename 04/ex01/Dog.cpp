@@ -1,14 +1,19 @@
 #include "Dog.hpp"
 
-Dog::Dog() {
+Dog::Dog() : Animal("Dog") {
 	std::cout << "Default Dog constructor called" << std::endl;
-	this->_type = "Dog"; 
 	this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
-	std::cout << "Cpoy Dog constructor called" << std::endl;
+Dog::Dog(const Dog &other) {
+	std::cout << "Copy Dog constructor called" << std::endl;
 	*this = other;
+}
+
+Dog::Dog(const Animal &other) : Animal(other) {
+	std::cout << "Copy Dog constructor called" << std::endl;
+	_type = other.getType();
+	_brain = new Brain();
 }
 
 Dog::~Dog(){
@@ -17,10 +22,10 @@ Dog::~Dog(){
 }
 
 Dog & Dog::operator=(const Dog &rhs){
-	if (this == &rhs)
-		return (*this);
-	this->_type = rhs._type;
-	this->_brain = new Brain(*rhs._brain);
+    if (this == &rhs)
+        return (*this);
+	_type = rhs._type;
+	_brain = new Brain(*rhs._brain);
 	return (*this);
 }
 

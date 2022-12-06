@@ -1,14 +1,19 @@
 #include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat() : Animal("Cat") {
 	std::cout << "Default Cat constructor called" << std::endl;
-    this->_type = "Cat";
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &other) : Animal(other) {
-	std::cout << "Cpoy Cat constructor called" << std::endl;
+Cat::Cat(const Cat &other) {
+	std::cout << "Copy Cat constructor called" << std::endl;
 	*this = other;
+}
+
+Cat::Cat(const Animal &other) : Animal(other) {
+	std::cout << "Copy Cat constructor called" << std::endl;
+	_type = other.getType();
+	_brain = new Brain();
 }
 
 Cat::~Cat(){
@@ -19,8 +24,8 @@ Cat::~Cat(){
 Cat & Cat::operator=(const Cat &rhs){
     if (this == &rhs)
         return (*this);
-	this->_type = rhs._type;
-	this->_brain = new Brain(*rhs._brain);
+	_type = rhs._type;
+	_brain = new Brain(*rhs._brain);
 	return (*this);
 }
 
@@ -29,7 +34,7 @@ void	Cat::makeSound() const {
 }
 
 void	Cat::setIdea(std::string idea, int idea_num) {
-	if (idea_num < 0 || idea_num >= 100){
+	if (idea_num < 0 || idea_num > 99){
 		std::cout << "Invalid idea number" << std::endl;
 		return ;
 	}

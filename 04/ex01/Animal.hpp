@@ -9,7 +9,8 @@ protected:
 	std::string	_type;
 public:
 	Animal();
-	Animal(const Animal *other);
+	Animal(std::string type);
+	Animal(const Animal &other);
 	virtual ~Animal();
 
 	Animal & operator=(const Animal &rhs);
