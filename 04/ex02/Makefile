@@ -1,5 +1,5 @@
 NAME		= worldOnFire
-SRC			= main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAAnimal.cpp WrongDog.cpp WrongCat.cpp Brain.cpp
+SRC			= main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp Brain.cpp
 OBJ			= ${SRC:.cpp=.o}
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf

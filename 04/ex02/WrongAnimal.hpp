@@ -1,14 +1,14 @@
-#ifndef WRONGAAnimal_HPP
-# define WRONGAAnimal_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <string.h>
 # include <iostream>
 
-class WrongAAnimal {
+class WrongAnimal {
 protected:
     std::string	_type;
 public:
-	virtual ~WrongAAnimal() = 0;
+	virtual ~WrongAnimal() = 0;
 		
 	virtual void	makeSound() const = 0;
 };

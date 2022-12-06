@@ -6,7 +6,7 @@ Dog::Dog() {
 	this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog &other) : AAnimal(other) {
+Dog::Dog(const Dog &other) {
 	std::cout << "Cpoy Dog constructor called" << std::endl;
 	*this = other;
 }

@@ -6,7 +6,7 @@ Cat::Cat() {
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &other) : AAnimal(other) {
+Cat::Cat(const Cat &other) {
 	std::cout << "Cpoy Cat constructor called" << std::endl;
 	*this = other;
 }
