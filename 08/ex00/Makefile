@@ -1,7 +1,7 @@
 NAME		= easyfind
 SRC			= main.cpp
 OBJ			= ${SRC:.c=.o}
-CXXFLAGS	= -Wall-Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
 all: $(NAME)
