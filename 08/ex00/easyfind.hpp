@@ -11,6 +11,16 @@ public:
     }
 };
 
+# include <stdlib.h>
+# include <iostream>
+#include <iostream>
+#include <exception>
+#include <iterator>
+#include <vector>
+#include <list>
+#include <string>
+#include <deque>
+
 template < typename T >
 typename T::iterator easyfind(T c, int n) {
     typename T::iterator i = std::find(c.begin(), c.end(), n);

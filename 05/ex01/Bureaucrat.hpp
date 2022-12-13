@@ -3,11 +3,8 @@
 
 # include <iostream>
 
-<<<<<<< HEAD
 class Form;
 
-=======
->>>>>>> 1ccbeca1fd56a748961481406b6aab0a00b52b8a
 class Bureaucrat {
 private:
 	const std::string	_name;
@@ -22,10 +19,7 @@ public:
 	void		increaseGrade();
 	void		decreaseGrade();
 	int 		setGrade(int grade);
-<<<<<<< HEAD
 	void		signForm(Form form);
-=======
->>>>>>> 1ccbeca1fd56a748961481406b6aab0a00b52b8a
 
 	class GradeTooHighException : public std::exception {
     public:

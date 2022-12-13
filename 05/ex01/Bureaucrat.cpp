@@ -1,16 +1,9 @@
 #include "Bureaucrat.hpp"
-<<<<<<< HEAD
 #include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Borat") {
 	_grade = 150;
 	std::cout << "Default Bureaucrat Borat was created successfully" << std::endl;
-=======
-
-Bureaucrat::Bureaucrat() : _name("Borat") {
-	_grade = 150;
-	std::cout << "Default Bureaucrat Borat has created successfully" << std::endl;
->>>>>>> 1ccbeca1fd56a748961481406b6aab0a00b52b8a
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
@@ -19,11 +12,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	_grade = grade;
-<<<<<<< HEAD
 	std::cout << "Bureaucrat " << name << " was created successfully" << std::endl;
-=======
-	std::cout << "Bureaucrat " << name << " has created successfully" << std::endl;
->>>>>>> 1ccbeca1fd56a748961481406b6aab0a00b52b8a
 }
 
 int	Bureaucrat::setGrade(int grade){
@@ -63,7 +52,6 @@ void	Bureaucrat::decreaseGrade(){
 		std::cout << "decreased " << getName() << " grade" << std::endl; 
 }
 
-<<<<<<< HEAD
 void	Bureaucrat::signForm(Form form) {
 	if (_grade <= form.getToSign()){
 		form.beSigned(this);
@@ -74,8 +62,6 @@ void	Bureaucrat::signForm(Form form) {
 		" because he doesn't have the required grade to sign this form" << std::endl;
 }
 
-=======
->>>>>>> 1ccbeca1fd56a748961481406b6aab0a00b52b8a
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &tmp){
 	out << tmp.getName() << " bureaucrat grade " << tmp.getGrade() << ".";
 	return out;
