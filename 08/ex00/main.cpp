@@ -1,8 +1,5 @@
 #include "easyfind.hpp"
 
-#include <vector>
-#include <iostream>
-
 int main(void)
 {
 	int to_find = 99999999;
